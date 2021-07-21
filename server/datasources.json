@@ -1,0 +1,12 @@
+{
+  "dbAppointment": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "appointments",
+    "password": "1234",
+    "name": "dbAppointment",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
