@@ -1,48 +1,55 @@
 {
-    "name": "appointment",
-    "base": "PersistedModel",
-    "idInjection": true,
-    "options": {
-        "validateUpsert": true
+  "name": "appointment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
     },
-    "properties": {
-        "id": {
-            "type": "number",
-            "required": true
-        },
-        "start": {
-            "type": "string",
-            "required": true
-        },
-        "end": {
-            "type": "string",
-            "required": true
-        },
-        "description": {
-            "type": "string"
-        },
-        "title": {
-            "type": "string",
-            "required": true
-        },
-        "userId": {
-            "type": "string",
-            "required": true
-        }
+    "start": {
+      "type": "string",
+      "required": true
     },
-    "validations": [],
-    "relations": {
-        "users": {
-            "type": "belongsTo",
-            "model": "User",
-            "foreignKey": "userId",
-            "primaryKey": "id",
-            "options": {
-                "nestRemoting": false,
-                "disableInclude": false
-            }
-        }
+    "end": {
+      "type": "string",
+      "required": true
     },
-    "acls": [],
-    "methods": {}
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "primaryKey": "id",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
 }
