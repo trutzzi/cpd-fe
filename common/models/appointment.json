@@ -27,12 +27,8 @@
         },
         "userId": {
             "type": "string",
-            "required": true
-        },
-        "confirmed": {
-            "type": "boolean",
-            "required": true,
-            "default": true
+            "required": false,
+            "default": false
         }
     },
     "validations": [],
@@ -76,11 +72,17 @@
             "property": "*"
         },
         {
-            "accessType": "WRITE",
+            "accessType": "EXECUTE",
             "principalType": "ROLE",
             "principalId": "admin",
             "permission": "ALLOW",
             "property": "WRITE"
+        },
+        {
+            "accessType": "WRITE",
+            "principalType": "ROLE",
+            "principalId": "admin",
+            "permission": "ALLOW"
         }
     ],
     "methods": {}
