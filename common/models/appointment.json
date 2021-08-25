@@ -28,6 +28,11 @@
         "userId": {
             "type": "string",
             "required": true
+        },
+        "confirmed": {
+            "type": "boolean",
+            "required": true,
+            "default": true
         }
     },
     "validations": [],
@@ -69,6 +74,13 @@
             "principalId": "$owner",
             "permission": "ALLOW",
             "property": "*"
+        },
+        {
+            "accessType": "WRITE",
+            "principalType": "ROLE",
+            "principalId": "admin",
+            "permission": "ALLOW",
+            "property": "WRITE"
         }
     ],
     "methods": {}
